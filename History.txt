@@ -1,0 +1,6 @@
+=== 0.1.0 / 2008-10-09
+
+* Initial Release
+
+  * First release.
+
