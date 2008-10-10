@@ -13,7 +13,7 @@ module Tags4Free
     end
   end
   
-  APPID       = 'Tags4Free'
+  APPID       = 'aPANO7nV34GzXKjOP9KBz8CEyH8UZp5we3NIY.305xTlOT2Pc0f.9BBLFdsTEw--'
   SERVICE_URL = 
       'http://api.search.yahoo.com/ContentAnalysisService/V1/termExtraction'
   format :xml
