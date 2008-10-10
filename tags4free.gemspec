@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.has_rdoc = true
   s.rdoc_options = ["--main", "README.txt"]
   s.require_paths = ["lib"]
-  s.rubyforge_project = %q{tags4free}
+  s.rubyforge_project = %q{kickassrb}
   s.rubygems_version = %q{1.2.0}
   s.signing_key = %q{/Users/walski/.gem/gem-private_key.pem}
   s.summary = %q{Free tag extraction from content using Yahoo! search API.}
@@ -24,13 +24,13 @@ Gem::Specification.new do |s|
 
     if current_version >= 3 then
       s.add_runtime_dependency(%q<httparty>, [">= 0.1.3"])
-      s.add_development_dependency(%q<hoe>, [">= 1.7.0"])
+      s.add_development_dependency(%q<hoe>, [">= 1.8.0"])
     else
       s.add_dependency(%q<httparty>, [">= 0.1.3"])
-      s.add_dependency(%q<hoe>, [">= 1.7.0"])
+      s.add_dependency(%q<hoe>, [">= 1.8.0"])
     end
   else
     s.add_dependency(%q<httparty>, [">= 0.1.3"])
-    s.add_dependency(%q<hoe>, [">= 1.7.0"])
+    s.add_dependency(%q<hoe>, [">= 1.8.0"])
   end
 end

@@ -3,6 +3,8 @@ module Tags4Free
   require 'httparty'
   include HTTParty
   
+  VERSION = '0.1.0'
+  
   class YahooApiError < ArgumentError; end
 
   class YahooApiFormatError < ArgumentError
@@ -10,8 +12,6 @@ module Tags4Free
       super "Malformed answer by Yahoo! for `#{content}`: #{result_set.inspect}"
     end
   end
-  
-  VERSION = '0.1.0'
   
   APPID       = 'Tags4Free'
   SERVICE_URL = 

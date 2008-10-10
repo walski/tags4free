@@ -3,6 +3,5 @@ Manifest.txt
 README.txt
 Rakefile
 lib/tags_4_free.rb
-setup.rb
 spec/spec_helper.rb
 spec/tags_4_free_spec.rb
