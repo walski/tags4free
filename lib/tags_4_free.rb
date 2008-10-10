@@ -3,7 +3,7 @@ module Tags4Free
   require 'httparty'
   include HTTParty
   
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
   
   class YahooApiError < ArgumentError; end
 
