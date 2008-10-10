@@ -8,12 +8,13 @@ describe Tags4Free do
   end
   
   it "should raise an exception if Yahoo! reports an error" do
-    Tags4Free.should_receive(:get).and_return({"Error"=>{"Message"=>"invalid value: context", "xmlns"=>"urn:yahoo:api"}})
+    def Tags4Free.get(*args)
+      raise Net::HTTPForbidden.new(403,'Forbidden','').error!
+    end
     
     begin
       Tags4Free.for("Erroneous content")
     rescue Tags4Free::YahooApiError => e
-      e.message.should include('invalid value: context')
     else
       violated('YahooApiError should be raised!')
     end

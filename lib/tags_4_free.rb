@@ -1,11 +1,12 @@
 module Tags4Free
   require 'rubygems'
+  require 'net/http'
   require 'httparty'
   include HTTParty
   
   VERSION = '0.1.1'
   
-  class YahooApiError < ArgumentError; end
+  class YahooApiError < StandardError; end
 
   class YahooApiFormatError < ArgumentError
     def initialize(content, result_set)
@@ -23,9 +24,12 @@ module Tags4Free
   #
   # tags = Tags4Free.for('The content that should be tagged')
   def self.for(content)
-    result_set = get(SERVICE_URL, :query => {:appid => APPID, :context => content})
-
-    raise YahooApiError.new(result_set['Error']['Message']) if result_set['Error']
+    begin
+      result_set = get(SERVICE_URL, :query => {:appid => APPID, :context => content})
+    rescue Net::HTTPServerException => e
+      raise YahooApiError
+    end
+    
     raise YahooApiFormatError.new(content, result_set) unless result_set['ResultSet']
     
     result_set['ResultSet']['Result'] || []

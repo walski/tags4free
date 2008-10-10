@@ -6,4 +6,4 @@ rescue LoadError
   require 'spec'
 end
  
-require File.join(File.dirname(__FILE__), '..', 'lib', 'tags4_free')
+require File.join(File.dirname(__FILE__), '..', 'lib', 'tags_4_free')
