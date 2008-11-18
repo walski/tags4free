@@ -6,11 +6,10 @@ Tags4Free allows you to easily extract tags or keywords from any stringish
 content using the Yahoo! search API.
 
 == SYNOPSIS:
+  require 'rubygems'
+  require 'tags_4_free'
 
-require 'rubygems'
-require 'tags_4_free'
-
-Tags4Free.for("Tags4Free allows you to easily extract tags or keywords from any stringish content using the Yahoo! search API.") # => ["search api", "yahoo search", "yahoo"]
+  Tags4Free.for("Tags4Free allows you to easily extract tags or keywords from any stringish content using the Yahoo! search API.") # => ["search api", "yahoo search", "yahoo"]
 
 == REQUIREMENTS:
 

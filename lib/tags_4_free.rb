@@ -4,7 +4,7 @@ module Tags4Free
   require 'httparty'
   include HTTParty
   
-  VERSION = '0.1.2'
+  VERSION = '0.1.3'
   
   class YahooApiError < StandardError; end
 
@@ -17,13 +17,13 @@ module Tags4Free
   APPID       = 'aPANO7nV34GzXKjOP9KBz8CEyH8UZp5we3NIY.305xTlOT2Pc0f.9BBLFdsTEw--'
   SERVICE_URL = 
       'http://api.search.yahoo.com/ContentAnalysisService/V1/termExtraction'
-  format :xml
   
   #
   # Generate tags for a string
   #
   # tags = Tags4Free.for('The content that should be tagged')
   def self.for(content)
+    format :xml
     begin
       result_set = get(SERVICE_URL, :query => {:appid => APPID, :context => content})
     rescue Net::HTTPServerException => e
